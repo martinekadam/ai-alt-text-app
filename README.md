@@ -1,19 +1,16 @@
 # Alt Text Generator and Translator (CLI)
 
-A lightweight Python CLI tool for generating and translating alt text for images using OpenAI's Vision and Chat models. Designed for accessibility researchers, content creators, and educators.
+A lightweight Python CLI tool for generating Czech and English alt text for images using OpenAI's Vision and Completions API. Designed for accessibility researchers, content creators, and educators.
 
 ---
 
-## Features
+## How it works
 
-- **Image Processing**: Converts images to base64 for API compatibility
-- **Batch Alt Text Generation**: Uses OpenAI's Vision API in batch mode to generate Czech alt texts
-- **Alt Text Translation**: Translates Czech alt text into English
-- **Excel Export**: Final result saved in a well-structured `.xlsx` file
+The application automates the process of generating and translating alt text for images. It begins by taking images from a specified input folder and processing them to ensure compatibility with the OpenAI Vision API. This includes converting, resizing, and base64 encoding the images. Once prepared, the app sends a batch job to the OpenAI Vision API, which generates alt text in Czech for each image. Subsequently, the app connects to the OpenAI Completions API to translate the Czech alt text into English. The final output is an Excel spreadsheet (.xlsx) that lists the original image names alongside their alt text in both Czech and English.
 
 ---
 
-## Folder Structure
+## Module Structure
 
 ```
 python_app/
@@ -45,24 +42,24 @@ python python_app/cli.py --input_folder path/to/images --output_folder path/to/s
 - `--input_folder`: Folder containing image files (jpg, png, etc.)
 - `--output_folder`: Where the translated Excel table will be saved
 
+For information regarding OpenAI APIs check the documentation at https://platform.openai.com
+
 ---
+
+## Allowed Image Formats
+- .bmp, .jpg, .jpeg, .png, .tif, .tiff, .webp
 
 ## Output
 
 A single `.xlsx` file containing:
-- 
-- AI generated alt texts in Czech)
+
+- Cleaned names of original image files
+- AI generated alt texts in Czech
 - Translated Czech alt texts into English)
 
 ---
 
 ## Project Status
 
-- ✅ CLI version: **Stable and ready for demo/presentation**
-- ⚒ GUI version: In R&D (using Electron, not included in this release)
-
----
-
-## License
-
-MIT — free for personal and academic use.
+- ✅ CLI version: **Stable and ready for use**
+- 🛠 GUI version: Under construction. 
