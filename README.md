@@ -54,8 +54,8 @@ For information regarding OpenAI APIs check the documentation at https://platfor
 A single `.xlsx` file containing:
 
 - Cleaned names of original image files
-- AI generated alt texts in Czech
-- Translated Czech alt texts into English)
+- AI generated alt text in Czech
+- Alt text translated by AI into English
 
 ---
 
