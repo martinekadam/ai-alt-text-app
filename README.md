@@ -62,4 +62,10 @@ A single `.xlsx` file containing:
 ## Project Status
 
 - ✅ CLI version: **Stable and ready for use**
-- 🛠 GUI version: Under construction. 
+- 🛠 GUI version: Under construction.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
