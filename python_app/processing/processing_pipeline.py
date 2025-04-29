@@ -1,5 +1,4 @@
 import tempfile
-import unicodedata
 import os
 from PIL import Image
 
@@ -7,19 +6,7 @@ from processing.image_loader import image_loader
 from processing.convert_to_jpeg import convert_to_jpeg
 from processing.image_resizer import resize_image
 from processing.encode_image import encode_image
-
-def clean_filename(filename: str) -> str:
-    """
-    Clean up the filename by removing diacritics, lowercasing, and replacing special characters.
-    """
-    # Normalize unicode (remove accents/diacritics)
-    normalized = unicodedata.normalize('NFKD', filename)
-    ascii_encoded = normalized.encode('ASCII', 'ignore').decode('ASCII')
-
-    # Lowercase and replace unwanted characters
-    cleaned = ascii_encoded.lower().replace(' ', '_')
-    cleaned = ''.join(char for char in cleaned if char.isalnum() or char in ('_', '-', '.'))
-    return cleaned
+from processing.filename_cleaner import clean_filename
 
 def processing_pipeline(input_dir: str) -> dict[str, str]:
     """
